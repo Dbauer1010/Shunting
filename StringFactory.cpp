@@ -4,10 +4,21 @@
 
 Queue* StringFactory::split(string s, string delims)
 {
-    myQueue->Enqueue(
-    /*
-    update split to return a Queue of strings that will represent our
-    input queue for shunting yard.  This will require you to implement
-    a Queue data structure that supports enqueue and dequeue
-    */
+    Queue* q = s;
+    Queue* delim = delims;
+    Queue* tempstring;
+    Queue* main;
+    Queue* tempdelim;
+    do
+    {
+      for(int i = 0; i < s[].length(); ++i)
+	  {
+    	  tempstring = strtok(s,delim);
+    	  main->Enqueue(tempstring);
+     	  tempdelim = strtok(delim, s);
+     	  main->Enqueue(tempdelim + 1);
+     	  delim->shift()
+      }
+    }
+    
 }
