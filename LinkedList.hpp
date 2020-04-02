@@ -1,15 +1,16 @@
-#include "Node.hpp"
+#include<iostream>
+using namespace std;
 
-class LinkedList
+class Node
 {
-    private:
-        Node* head;
-        int count;
-
     public:
-        LinkedList();
-        void addEnd(string payload);
-        string* toStringArray();
-        string get(int index);
-        void display();
+        Node(string payload);
+        string getPayload();
+        Node* getNextNode();
+        void setNextNode(Node* n);
+
+    private:
+        string payload;
+        Node* nextNode;
+
 };
