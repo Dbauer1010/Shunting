@@ -47,7 +47,7 @@ string Queue::dequeue()
     }
     else
     {
-        return ""; //this should never happen!!!!  Throw an exception
+        return "Queue is empty"; 
     }
     
 }
