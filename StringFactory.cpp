@@ -1,24 +1,36 @@
 #include "StringFactory.hpp"
-#include "Queue.hpp"
-#include <iostream>
+
+bool StringFactory::isInString(string searchString, char charToFind)
+{
+    for(int i = 0; i < searchString.length(); i++)
+    {
+        if(searchString[i] == charToFind)
+        {
+            return true;
+        }
+    }
+    return false;
+}
 
 Queue* StringFactory::split(string s, string delims)
 {
-    Queue* q = s;
-    Queue* delim = delims;
-    Queue* tempstring;
-    Queue* main;
-    Queue* tempdelim;
-    do
+    //string s = "123+42-8*2";
+    //string ops = "+-*/";
+    Queue* answerQ = new Queue();
+    string temp = "";
+    for(int i = 0; i < s.length(); i++)
     {
-      for(int i = 0; i < s[].length(); ++i)
-	  {
-    	  tempstring = strtok(s,delim);
-    	  main->Enqueue(tempstring);
-     	  tempdelim = strtok(delim, s);
-     	  main->Enqueue(tempdelim + 1);
-     	  delim->shift()
-      }
+        if(isInString(delims, s[i]))
+        {
+            answerQ->enqueue(temp);
+            answerQ->enqueue((string)"" + s[i]);
+            temp = "";
+        }
+        else
+        {
+            temp = temp + s[i];
+        }
     }
-    
+    answerQ->enqueue(temp);
+    return answerQ;
 }
