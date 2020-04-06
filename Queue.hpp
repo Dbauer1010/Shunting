@@ -1,16 +1,18 @@
-#include Queue.cpp;
-#include <iostream>
-
-using namespace std;
-
+#ifndef Queue_hpp
+#define Queue_hpp
+#include "Node.hpp"
 class Queue
 {
-    public:
-      void Enqueue(int val);
-      void Dequeue(int val);
-      int front = -1;
-      int rear = -1;
-  
     private:
-      int queue[MAX_SIZE], front, rear;
-}
+        Node* head;
+        Node* tail;
+        int count;
+
+    public:
+        Queue();
+        void enqueue(string payload);
+        string dequeue();
+        void display();
+        int getCount();
+};
+#endif
